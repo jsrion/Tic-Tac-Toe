@@ -10,7 +10,6 @@ body{
 }
 
 .board{
-    background-color: black;
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -24,7 +23,7 @@ body{
 .cell{
     width: var(--cell-size);
     height: var(--cell-size);
-    border: 1px solid #fff;
+    border: 1px solid #000;
     display: flex;
     justify-content: center;
     align-items: center;
