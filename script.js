@@ -73,7 +73,7 @@ function resetGame()
 
 function gameOver(a)
 {
-    var gameOverAlertElement = "<b>Game Over! </b><br><br> Player " +
+    var gameOverAlertElement = "<b>Game Over </b><br><br> Player " +
     span[a].dataset.player.toUpperCase() + ' Win! <br><br>' + restartButton;
     var div = document.createElement("div");
     div.className = "alert";
@@ -92,3 +92,27 @@ function draw(){
     window.isGameOver = true;
     moves = 0;
 }
+
+function displayTime(){
+    const dateTime = new Date();
+    let hrs = dateTime.getHours();
+    const min = dateTime.getMinutes();
+    const sec = dateTime.getSeconds();
+    const session = document.getElementById('session');
+
+    if(hrs >= 12){
+        session.innerHTML = 'PM';
+    }
+    else{
+        session.innerHTML = 'AM';
+    }
+
+    if(hrs > 12){
+        hrs = hrs - 12;
+    }
+
+    document.getElementById('hours').innerHTML = hrs;
+    document.getElementById('minutes').innerHTML = min;
+    document.getElementById('seconds').innerHTML = sec;
+}
+setInterval(displayTime, 10);
