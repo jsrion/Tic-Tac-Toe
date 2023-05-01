@@ -84,7 +84,9 @@ button:focus{
 }
 
 .activeBox{
-	background: silver;
+	-webkit-animation: container .5s ease-in-out infinite alternate;
+  	-moz-animation: container .5s ease-in-out infinite alternate;
+  	animation: container .5s ease-in-out infinite alternate;
 }
 
 @keyframes larger{
