@@ -3,7 +3,6 @@ body{
 	color: black;
 	font-family: sans-serif;
 	text-align: center;
-	padding: 0%;
 }
 
 h1{
@@ -59,6 +58,7 @@ span{
 	width: 125px;
 	display: inline-block;
 	background-color: ghostwhite;
+	position: relative;
 	z-index: 10;
 	margin-top: -25px;
 	border-radius: 20px;
