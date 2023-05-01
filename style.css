@@ -1,116 +1,100 @@
-:root{
-    --cell-size: 100px;
-    --color: #81c3; /*for hover*/
-    --color-set: #0257d8; /*for set*/
-    --l: 10px; /*x line width */
-}
-
 body{
-    margin: 0;
+    background: white;
+	color: black;
+	font-family: serif;
+	text-align: center;
+
 }
 
-.board{
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
-    align-items: center;
-    grid-template-columns: repeat(3, auto);
+h1{
+	font-size: large;
 }
 
-.cell{
-    width: var(--cell-size);
-    height: var(--cell-size);
-    border: 1px solid #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    cursor: pointer;
+#container{
+	margin: 5% auto;
+	border-radius: 5px;
+	text-align: center;
 }
 
-/* remove border for edges */
-.cell:nth-child(1), .cell:nth-child(2), .cell:nth-child(3) {
+.box{
+	display: inline-block;
+	border:1px solid black;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 0;
+}
+
+span{
+	position: absolute;
+	font-size: 75px;
+	font-family: sans-serif;
+	text-align: center;
+	height: 75px;
+	width: 75px;
+	padding: 0;
+	margin: 5px;
+	margin-left: -35px;
+}
+
+.top{
 	border-top: none;
 }
 
-.cell:nth-child(1), .cell:nth-child(4), .cell:nth-child(7) {
+.left{
 	border-left: none;
 }
 
-.cell:nth-child(3), .cell:nth-child(6), .cell:nth-child(9) {
+.right{
 	border-right: none;
 }
 
-.cell:nth-child(7), .cell:nth-child(8), .cell:nth-child(9) {
+.bot{
 	border-bottom: none;
 }
 
-/*No hover effect if cell is already occupied*/
-.cell.x, .cell.circle{
-    cursor: not-allowed;
-}
-
-/* for cross */
-.board.x .cell:not(.circle):not(.x):hover {
-	background: linear-gradient(to top right, transparent calc(50% - var(--l) / 2), var(--color) calc(50% - var(--l) / 2) calc(50% + var(--l) / 2), transparent calc(50% + var(--l) / 2)),
-				linear-gradient(to bottom right, transparent calc(50% - var(--l) / 2), var(--color) calc(50% - var(--l) / 2) calc(50% + var(--l) / 2), transparent calc(50% + var(--l) / 2));
-	background-size: 80% 80%;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-/* for cross (set) */
-.cell:not(.circle).x {
-	background: linear-gradient(to top right, transparent calc(50% - var(--l) / 2), var(--color-set) calc(50% - var(--l) / 2) calc(50% + var(--l) / 2), transparent calc(50% + var(--l) / 2)),
-				linear-gradient(to bottom right, transparent calc(50% - var(--l) / 2), var(--color-set) calc(50% - var(--l) / 2) calc(50% + var(--l) / 2), transparent calc(50% + var(--l) / 2));
-	background-size: 80% 80%;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-/* for circle */
-.board.circle .cell:not(.circle):not(.x):hover {	
-	background: radial-gradient(var(--color) 60%, transparent 60%);
-}
-
-/* for circle (set) */
-.cell:not(.x).circle {
-	background: radial-gradient(var(--color-set) 60%, transparent 60%);
-}
-
-.winning-message {
-	display: none;
-	position: fixed;
+.alert{
+	height: 75px;
+	width: 125px;
+	display: inline-block;
+	background-color: ghostwhite;
+	z-index: 10;
+	margin-top: -50%;
+	border-radius: 20px;
+	box-shadow: 0 0 75px 2 dimgray;
+	animation: larger 0.5s;
+	animation-fill-mode: forwards;
+	box-sizing: content-box;
+	padding: 30px;
+	bottom: 50px;
 	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: var(--color-set);
-	justify-content: center;
-	align-items: center;
-	color: white;
-	font-size: 5rem;
-	font-family: 'Courier New', Courier, monospace;
-	flex-direction: column;
 }
 
-.winning-message button {
-	border-radius: 10px;
-	font-size: 3rem;
-	background-color: white;
-	border: 1px solid var(--color-set);
-	padding: .25em .5em;
-	cursor: pointer;
+button{
+	background: dimgray;
+	border-radius: 2px;
+	color: ghostwhite;
+	border: none;
+	outline: none;
 }
 
-.winning-message button:hover {
-	background-color: var(--color-set);
-	color: white;
-	border-color: white;
+button:focus{
+	background: sienna;
 }
 
-.winning-message.show {
-	display: flex;
+.activeBox{
+	background: silver;
+}
+
+@keyframes larger{
+	from{
+		height:75px;
+		width:125px;
+	}
+
+	to{
+		height:100px;
+		width:250px;
+	}
 }

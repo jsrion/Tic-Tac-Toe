@@ -5,24 +5,48 @@
         <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
         <meta name = "viewport" content = "width = device-width, initial-scale=1.0">
         <link rel = "stylesheet" href = "style.css">
-        <script src = "script.js"></script>
         <title>TicTacToe</title>
     </head>
+
     <body>
-        <div class = "board" id = "board">
-            <div class = "cell" data-cell></div>
-            <div class = "cell" data-cell></div>
-            <div class = "cell" data-cell></div>
-            <div class = "cell" data-cell></div>
-            <div class = "cell" data-cell></div>
-            <div class = "cell" data-cell></div>
-            <div class = "cell" data-cell></div>
-            <div class = "cell" data-cell></div>
-            <div class = "cell" data-cell></div>
+        <h1>XO Game</h1>
+        <div id = "container">
+            <div class = "block">
+                <div id = "box1" class = "box top left">
+                    <span data-player = "none" onClick = "play(this)">&nbsp;</span>
+                </div>
+                <div id = "box2" class = "box top ">
+                    <span data-player = "none" onClick = "play(this)">&nbsp;</span>
+                </div>
+                <div id = "box3" class = "box top right">
+                    <span data-player = "none" onClick = "play(this)">&nbsp;</span>
+                </div>
+            </div>
+            <div class = "block">
+                <div id = "box4" class = "box middle left">
+                    <span data-player = "none" onClick = "play(this)">&nbsp;</span>
+                </div>
+                <div id = "box5" class = "box middle ">
+                    <span data-player = "none" onClick = "play(this)">&nbsp;</span>
+                </div>
+                <div id = "box6" class = "box middle right">
+                    <span data-player = "none" onClick = "play(this)">&nbsp;</span>
+                </div>
+            </div>
+            <div class = "block">
+                <div id = "box7" class = "box bot left">
+                    <span data-player = "none" onClick = "play(this)">&nbsp;</span>
+                </div>
+                <div id = "box8" class = "box bot ">
+                    <span data-player = "none" onClick = "play(this)">&nbsp;</span>
+                </div>
+                <div id = "box9" class = "box bot right">
+                    <span data-player = "none" onClick = "play(this)">&nbsp;</span>
+                </div>
+            </div>
         </div>
-        <div class = "winning-message" id = "winningMessage">
-            <div id = "winningMessageText"></div>
-            <button id = "restartButton">Restart</button>
-        </div>
+
+        <script src = "script.js"></script>
+
     </body>
 </html>
